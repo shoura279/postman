@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2bc8121b-379b-4a4a-a01a-ba3be94c00f2",
+		"_postman_id": "93e9c461-b508-4f07-b0bd-faa00fa729d0",
 		"name": "medsProject",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26559147"
@@ -11,15 +11,25 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ahmed shoura\",\r\n    \"email\":\"shoura@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"phone\":\"01024708096\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"login"
 					]
 				}
 			},
@@ -30,15 +40,25 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ahmed shoura\",\r\n    \"email\":\"shoura@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"phone\":\"01024708096\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/registr",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"registr"
 					]
 				}
 			},
@@ -46,18 +66,37 @@
 		},
 		{
 			"name": "getCategory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "1d0e4f7e66176c04457f10f3014b0771",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/getCategore",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"getCategore"
 					]
 				}
 			},
@@ -67,16 +106,33 @@
 			"name": "createCategry",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"hug\",\r\n    \"description\":\"hug hug hug\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/createCategore",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"createCategore"
 					]
 				}
 			},
@@ -86,16 +142,34 @@
 			"name": "UPDATA CATEGORY",
 			"request": {
 				"method": "PATCH",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/updataCategory/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"updataCategory",
+						"2"
 					]
 				}
 			},
@@ -105,16 +179,25 @@
 			"name": "DELET CATEGORY",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/deleteCategory/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"deleteCategory",
+						"1"
 					]
 				}
 			},
@@ -124,16 +207,24 @@
 			"name": "get requist",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/getRequist",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"getRequist"
 					]
 				}
 			},
@@ -143,16 +234,25 @@
 			"name": "get spacific requist",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "1d0e4f7e66176c04457f10f3014b0771",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/user/getRequist/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"user",
+						"getRequist",
+						"1"
 					]
 				}
 			},
@@ -162,16 +262,33 @@
 			"name": "Create Medicine",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"rr\",\r\n    \"description\":\"rr\",\r\n    \"price\":12,\r\n    \"expaire_date\":\"2023-04-20\",\r\n    \"category_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/createMedicine",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"createMedicine"
 					]
 				}
 			},
@@ -181,16 +298,25 @@
 			"name": "Update Medicine",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/updateMedicine/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"updateMedicine",
+						"1"
 					]
 				}
 			},
@@ -200,16 +326,25 @@
 			"name": "Delete Medicine",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/deleteMedicine/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"deleteMedicine",
+						"1"
 					]
 				}
 			},
@@ -221,14 +356,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/Medicine/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"Medicine",
+						"1"
 					]
 				}
 			},
@@ -240,14 +377,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/filterMedicine",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"filterMedicine"
 					]
 				}
 			},
@@ -255,18 +393,39 @@
 		},
 		{
 			"name": "get sepecific user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/getSepecificUser/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"getSepecificUser",
+						"3"
 					]
 				}
 			},
@@ -276,16 +435,34 @@
 			"name": "update user",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ss\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/updateUser/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"updateUser",
+						"3"
 					]
 				}
 			},
@@ -295,16 +472,25 @@
 			"name": "delete user",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/deleteUser/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"deleteUser",
+						"1"
 					]
 				}
 			},
@@ -314,16 +500,25 @@
 			"name": "accept requests",
 			"request": {
 				"method": "PATCH",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/acceptRequests/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"acceptRequests",
+						"1"
 					]
 				}
 			},
@@ -333,16 +528,25 @@
 			"name": "ignore requests",
 			"request": {
 				"method": "PATCH",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/ignoreRequests/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"ignoreRequests",
+						"1"
 					]
 				}
 			},
@@ -352,16 +556,25 @@
 			"name": "delete requests",
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "6ed0393fab284d3fedda265e7321d526",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/admin/deleteRequests/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"admin",
+						"deleteRequests",
+						"1"
 					]
 				}
 			},
@@ -371,34 +584,35 @@
 			"name": "send request",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "token",
+						"value": "1d0e4f7e66176c04457f10f3014b0771",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":1,\r\n    \"medicine_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5000/",
+					"raw": "http://localhost:5000/meds/user/sendRequests",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
-						""
+						"meds",
+						"user",
+						"sendRequests"
 					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "login Copy 9",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "login Copy 10",
-			"request": {
-				"method": "GET",
-				"header": []
 			},
 			"response": []
 		}
