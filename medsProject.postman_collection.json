@@ -41,13 +41,14 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"ahmed shoura\",\r\n    \"email\":\"shoura@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"phone\":\"01024708096\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imageURL",
+							"type": "file",
+							"src": []
 						}
-					}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:5000/meds/registr",
@@ -265,18 +266,44 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
+						"value": "1d0e4f7e66176c04457f10f3014b0771",
 						"type": "text"
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"rr\",\r\n    \"description\":\"rr\",\r\n    \"price\":12,\r\n    \"expaire_date\":\"2023-04-20\",\r\n    \"category_id\":1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "rrrrrrrrrrrr",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "rrrrrrrrrrr",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "expaire_date",
+							"value": "2023-04-20",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "imageURL",
+							"type": "file",
+							"src": "/C:/Users/shoura/Desktop/pic/3a82653c5efcde51.jpg"
 						}
-					}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:5000/meds/admin/createMedicine",
@@ -301,10 +328,14 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
+						"value": "1d0e4f7e66176c04457f10f3014b0771",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
 				"url": {
 					"raw": "http://localhost:5000/meds/admin/updateMedicine/1",
 					"protocol": "http",
@@ -329,12 +360,12 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
+						"value": "1d0e4f7e66176c04457f10f3014b0771",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:5000/meds/admin/deleteMedicine/1",
+					"raw": "http://localhost:5000/meds/admin/deleteMedicine/9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -344,7 +375,7 @@
 						"meds",
 						"admin",
 						"deleteMedicine",
-						"1"
+						"9"
 					]
 				}
 			},
@@ -366,6 +397,26 @@
 						"meds",
 						"Medicine",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all meds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/meds/Medicine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"meds",
+						"Medicine"
 					]
 				}
 			},
@@ -438,13 +489,13 @@
 				"header": [
 					{
 						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
+						"value": "1d0e4f7e66176c04457f10f3014b0771",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"ss\"\r\n}",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"12345678955\",\r\n    \"status\":1,\r\n    \"phone\":\"01024708096\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -452,7 +503,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/meds/admin/updateUser/3",
+					"raw": "http://localhost:5000/meds/admin/updateUser/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -462,7 +513,7 @@
 						"meds",
 						"admin",
 						"updateUser",
-						"3"
+						"2"
 					]
 				}
 			},
