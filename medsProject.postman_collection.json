@@ -7,665 +7,736 @@
 	},
 	"item": [
 		{
-			"name": "login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"ahmed shoura\",\r\n    \"email\":\"shoura@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"phone\":\"01024708096\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ahmed shoura\",\r\n    \"email\":\"shoura@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"phone\":\"01024708096\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/meds/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"meds",
+								"login"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:5000/meds/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"login"
-					]
+				{
+					"name": "registeration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imageURL",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/meds/registr",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"meds",
+								"registr"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "registeration",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
+			"name": "Category",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
 						{
-							"key": "imageURL",
-							"type": "file",
-							"src": []
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:5000/meds/registr",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"registr"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getCategory",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "1d0e4f7e66176c04457f10f3014b0771",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/meds/getCategore",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"getCategore"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "createCategry",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"hug\",\r\n    \"description\":\"hug hug hug\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/createCategore",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"createCategore"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "UPDATA CATEGORY",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/updataCategory/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"updataCategory",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELET CATEGORY",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/deleteCategory/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"deleteCategory",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get requist",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/getRequist",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"getRequist"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get spacific requist",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "1d0e4f7e66176c04457f10f3014b0771",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/meds/user/getRequist/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"user",
-						"getRequist",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Medicine",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "token",
-						"value": "1d0e4f7e66176c04457f10f3014b0771",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "rrrrrrrrrrrr",
-							"type": "text"
+							"name": "createCategry",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "6ed0393fab284d3fedda265e7321d526",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"hug\",\r\n    \"description\":\"hug hug hug\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/createCategore",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"createCategore"
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "description",
-							"value": "rrrrrrrrrrr",
-							"type": "text"
+							"name": "UPDATA CATEGORY",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "6ed0393fab284d3fedda265e7321d526",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/updataCategory/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"updataCategory",
+										"2"
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "price",
-							"value": "12",
-							"type": "text"
-						},
-						{
-							"key": "expaire_date",
-							"value": "2023-04-20",
-							"type": "text"
-						},
-						{
-							"key": "category_id",
-							"value": "3",
-							"type": "text"
-						},
-						{
-							"key": "imageURL",
-							"type": "file",
-							"src": "/C:/Users/shoura/Desktop/pic/3a82653c5efcde51.jpg"
+							"name": "DELET CATEGORY",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "6ed0393fab284d3fedda265e7321d526",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/deleteCategory/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"deleteCategory",
+										"1"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/createMedicine",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"createMedicine"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Medicine",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "token",
-						"value": "1d0e4f7e66176c04457f10f3014b0771",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/updateMedicine/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"updateMedicine",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Medicine",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "token",
-						"value": "1d0e4f7e66176c04457f10f3014b0771",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/deleteMedicine/9",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"deleteMedicine",
-						"9"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "view specific medicine",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/meds/Medicine/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"Medicine",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "list all meds",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/meds/Medicine",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"Medicine"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "filter medicine",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/meds/filterMedicine",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"filterMedicine"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get sepecific user",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "shared",
+					"item": [
+						{
+							"name": "getCategory",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "1d0e4f7e66176c04457f10f3014b0771",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/meds/getCategore",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"getCategore"
+									]
+								}
+							},
+							"response": []
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/getSepecificUser/3",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"getSepecificUser",
-						"3"
 					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "update user",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "token",
-						"value": "1d0e4f7e66176c04457f10f3014b0771",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"12345678955\",\r\n    \"status\":1,\r\n    \"phone\":\"01024708096\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "requist",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "accept requests",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "6ed0393fab284d3fedda265e7321d526",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/acceptRequests/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"acceptRequests",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ignore requests",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "token",
+										"value": "6ed0393fab284d3fedda265e7321d526",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/ignoreRequests/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"ignoreRequests",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete requests",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "6ed0393fab284d3fedda265e7321d526",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/deleteRequests/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"deleteRequests",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all requists",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "6ed0393fab284d3fedda265e7321d526",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/getRequist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"getRequist"
+									]
+								}
+							},
+							"response": []
 						}
-					}
+					]
 				},
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/updateUser/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"updateUser",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete user",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/deleteUser/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"deleteUser",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "accept requests",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/acceptRequests/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"acceptRequests",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ignore requests",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/ignoreRequests/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"ignoreRequests",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete requests",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "token",
-						"value": "6ed0393fab284d3fedda265e7321d526",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:5000/meds/admin/deleteRequests/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"admin",
-						"deleteRequests",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "send request",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "token",
-						"value": "1d0e4f7e66176c04457f10f3014b0771",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\":1,\r\n    \"medicine_id\":1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "send request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "1d0e4f7e66176c04457f10f3014b0771",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\":1,\r\n    \"medicine_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/meds/user/sendRequests",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"user",
+										"sendRequests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get requists for spacific user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "1d0e4f7e66176c04457f10f3014b0771",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/meds/user/getRequist/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"user",
+										"getRequist",
+										"1"
+									]
+								}
+							},
+							"response": []
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/meds/user/sendRequests",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"meds",
-						"user",
-						"sendRequests"
 					]
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Medicine",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "Create Medicine",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "1d0e4f7e66176c04457f10f3014b0771",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "rrrrrrrrrrrr",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "rrrrrrrrrrr",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "12",
+											"type": "text"
+										},
+										{
+											"key": "expaire_date",
+											"value": "2023-04-20",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "imageURL",
+											"type": "file",
+											"src": "/C:/Users/shoura/Desktop/pic/3a82653c5efcde51.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/createMedicine",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"createMedicine"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Medicine",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "1d0e4f7e66176c04457f10f3014b0771",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/deleteMedicine/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"deleteMedicine",
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Medicine",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "1d0e4f7e66176c04457f10f3014b0771",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://localhost:5000/meds/admin/updateMedicine/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"admin",
+										"updateMedicine",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "shared",
+					"item": [
+						{
+							"name": "filter medicine",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/meds/filterMedicine",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"filterMedicine"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list all meds",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/meds/Medicine",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"Medicine"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "view specific medicine",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/meds/Medicine/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"meds",
+										"Medicine",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "manage user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get sepecific user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "6ed0393fab284d3fedda265e7321d526",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/meds/admin/getSepecificUser/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"meds",
+								"admin",
+								"getSepecificUser",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "1d0e4f7e66176c04457f10f3014b0771",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"12345678955\",\r\n    \"status\":1,\r\n    \"phone\":\"01024708096\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/meds/admin/updateUser/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"meds",
+								"admin",
+								"updateUser",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "6ed0393fab284d3fedda265e7321d526",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/meds/admin/deleteUser/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"meds",
+								"admin",
+								"deleteUser",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
